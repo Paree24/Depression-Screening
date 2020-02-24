@@ -211,20 +211,21 @@ def cleandata(data):
     #We Return cleaned data
 	return data
 
-#We call get data function to get data from commandline/default and store it in variable data
-print("Fetching Data...")
-print("\n")
-data=getdata()
-print("Done.")
-print("\n")
-#We call cleandata, and save the cleaned data in data
-data=cleandata(data)
-#We print the results after cleaning
-print("Final Results:")
-print(data.isnull().sum())
-#Export the cleaned data to the file cleaned.csv
-print("Saving Data to cleaned.csv..")
-print("\n")
-data.to_csv("cleaned.csv")
-print("Completed.")
-print("\n")
+def preprocess():
+	#We call get data function to get data from commandline/default and store it in variable data
+	print("Fetching Data...")
+	print("\n")
+	data=getdata()
+	print("Done.")
+	print("\n")
+	#We call cleandata, and save the cleaned data in data
+	data=cleandata(data)
+	#We print the results after cleaning
+	print("Final Results:")
+	print(data.isnull().sum())
+	#Export the cleaned data to the file cleaned.csv
+	print("Saving Data to cleaned.csv..")
+	print("\n")
+	data.to_csv("cleaned.csv")
+	print("Completed.")
+	print("\n")
