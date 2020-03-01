@@ -229,3 +229,4 @@ def preprocess():
 	data.to_csv("cleaned.csv")
 	print("Completed.")
 	print("\n")
+preprocess()
