@@ -176,7 +176,7 @@ def get_feature_importance(data,target,num):
     print(accuracy_score(ytest,pred))
     print('\n')
     print('\n')
-    
+    print(model.feature_importances_)
     #get feature importance and construct a dataframe
     features=pd.DataFrame()
     #Contains column names
