@@ -91,6 +91,7 @@ def TargetEncode(data,target):
     data_to_encode=data.select_dtypes(include=['object'])
     print('Data to be encoded: ')
     cols=list(data_to_encode.columns)
+    print(len(cols))
     cols='\n'.join(cols)
     print(cols)
     print('\n')
@@ -239,6 +240,9 @@ def main():
         print(data.head())
         print('\n')
         print('\n')
+        temp=data.copy()
+        print("TEMP")
+        print(temp.head())
         data=TargetEncode(data,'Depression')
     except:
         print("Not applicable")
@@ -268,6 +272,16 @@ def main():
     print('\n')
     print(featurestr)
     features.append('Depression')
+    temp=temp[features]
+    temp.to_csv('notencoded.csv')
+    #If the data is exported from pandas
+    print(temp.shape)
+    if temp.columns[0]=='Unnamed: 0':
+        temp=temp.iloc[:,1:]
+    temp=TargetEncode(temp,'Depression')
+    print('Saved Target Encoding for 15 features')
+    print(temp.shape)
+    temp.to_csv('temp.csv')
     data=data[features]
     #Save the encoded data to a csv file
     data.to_csv("encoded.csv")

@@ -27,20 +27,26 @@ from sklearn.model_selection import RandomizedSearchCV
 
 #The function getdata gets data from commandline, if no filname is given, it takes default argument
 def getdata():
-	try:
-		#get filename from commandline
-		filename=sys.argv[1]
-		#read data from file
-		data=pd.read_csv(filename)
-		print("Filename is,",filename)
-		print('\n')
-		#return data to a variable
-		return data
-	except:
-		#if no filename is given in the arguments, use 2018.csv
-		data=pd.read_csv('encoded.csv')
-		#return data to a variable
-		return data
+    try:
+        #get filename from commandline
+        filename=sys.argv[1]
+        #read data from file
+        data=pd.read_csv(filename)
+        print("Filename is,",filename)
+        print('\n')
+        #If the data is exported from pandas
+        if data.columns[0]=='Unnamed: 0':
+            data=data.iloc[:,1:]
+        #return data to a variable
+        return data
+    except:
+        #if no filename is given in the arguments, use 2018.csv
+        data=pd.read_csv('encoded.csv')
+        #If the data is exported from pandas
+        if data.columns[0]=='Unnamed: 0':
+            data=data.iloc[:,1:]
+        #return data to a variable
+        return data
 
         
 def RandomForest_Opt():
