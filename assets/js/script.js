@@ -13,21 +13,81 @@ $(function(){
         var questionNo = 0;
         var correctCount = 0;
         var q = [
-                {'Q': 'Whether stress bothers you or interferes you during work?', 'A':1, 'C':['Sometimes', 'Often', 'Not applicable to me', 'Rarely', 'Never']},
-                {'Q': 'Have you had any previous mental health issues or disorder?', 'A':1, 'C':['Yes', 'No', "Don't Know", 'Possibly']},
-                {'Q': 'Does stress generally interfere in your daily activities?', 'A':1, 'C':['Rarely', 'Sometimes', 'Not applicable to me', 'No', 'Often', 'Never', 'Yes']},
-                {'Q': 'Have you sought any treatment for mental health related issues?', 'A':1, 'C':['0','1']},
-                {'Q': 'Are you willing to share your mental health status with your friends?', 'A':1, 'C': ['No', 'Yes']},
-                {'Q': 'Has anyone in your family have a history of mental health issues?', 'A':1, 'C': ['Yes', 'No', "I don't know"]},
-                {'Q': 'Rate the emphasis on physical health in your company', 'A':1, 'C':['0','1','2','3','4','5','6','7','8','9','10']},
-                {'Q': 'How easy is it to get medical leave for depression?', 'A':1, 'C':['Somewhat difficult', 'Somewhat easy', 'Neither easy nor difficult', "I don't know", 'Very easy', 'Difficult']},
-                {'Q': 'How many number of employees are present in your company/organization?', 'A':1, 'C':['More than 1000', '6-25', '26-100', '100-500', '500-1000', '1-5']},
-                {'Q': 'Are mental health issues handled well by your coworkers and employers?', 'A':1, 'C':['Yes, I observed', 'No', 'Maybe/Not sure', 'Yes, I experienced']},
-                {'Q': 'Were you comfortable bringing up mental health issues with your previous supervisors?', 'A':1, 'C':['No, none of my previous supervisors', 'Some of my previous supervisors', 'Yes, all of my previous supervisors']},
-                {'Q': 'Were you aware of the importance of mental health?', 'A':1, 'C':['No, I only became aware later', 'I was aware of some', 'Yes, I was aware of all of them', 'N/A (was not aware)']},
-                {'Q': 'How many of your coworkers respond to you when you seeked help for previous mental/physical health issues?', 'A':1, 'C':['No, none did', 'Some did', 'Yes, they all did', "I don't know"]},
-                {'Q': 'Is there any mental health allowance in your company/organization?', 'A':1, 'C':['Yes', 'No', 'Not eligible for coverage / NA', "I don't know"]},
-                {'Q': 'Are you okay with bringing up your mental health issues with your employer?', 'A':1, 'C':['No', 'Yes', 'Maybe']} 
+                {
+                    'Q': 'Whether stress bothers you or interferes you during work?',
+                    'C':['Sometimes', 'Often', 'Not applicable to me', 'Rarely', 'Never'],
+                    'cname':'interferes_with_work'
+                },
+                {
+                    'Q': 'Have you had any previous mental health issues or disorder?',
+                    'C':['Yes', 'No', "Don't Know", 'Possibly'],
+                    'cname':'prev_mental_disorder'
+                },
+                {
+                    'Q': 'Does stress generally interfere in your daily activities?',
+                    'C':['Rarely', 'Sometimes', 'Not applicable to me', 'No', 'Often', 'Never', 'Yes'],
+                    'cname':'if_it_interferes'
+                },
+                {
+                    'Q': 'Have you sought any treatment for mental health related issues?',
+                    'C':['0','1'],
+                    'cname':'Sought_Treatment'
+                },
+                {
+                    'Q': 'Are you willing to share your mental health status with your friends?',
+                    'C': ['No', 'Yes'],
+                    'cname':'are_you_willing_to_share_with_friends'
+                },
+                {
+                    'Q': 'Has anyone in your family have a history of mental health issues?',
+                    'C': ['Yes', 'No', "I don't know"],
+                    'cname':'family_history_of_mental_health'
+                },
+                {
+                    'Q': 'Rate the emphasis on physical health in your company',
+                    'C':['0','1','2','3','4','5','6','7','8','9','10'],
+                    'cname':'emphasis_on_physical_health'
+                },
+                {
+                    'Q': 'How easy is it to get medical leave for depression?',
+                    'C':['Somewhat difficult', 'Somewhat easy', 'Neither easy nor difficult', "I don't know", 'Very easy', 'Difficult'],
+                    'cname':'medical_leave_for_depression'
+                },
+                {
+                    'Q': 'How many number of employees are present in your company/organization?',
+                    'C':['More than 1000', '6-25', '26-100', '100-500', '500-1000', '1-5'],
+                    'cname':'Number_of_employees_in_org'
+                },
+                {
+                    'Q': 'Are mental health issues handled well by your coworkers and employers?',
+                    'C':['Yes, I observed', 'No', 'Maybe/Not sure', 'Yes, I experienced'],
+                    'cname':'well_handled'
+                },
+                {
+                    'Q': 'Were you comfortable bringing up mental health issues with your previous supervisors?',
+                    'C':['No, none of my previous supervisors', 'Some of my previous supervisors', 'Yes, all of my previous supervisors'],
+                    'cname':'comfortable_direct_sup_previous'
+                },
+                {
+                    'Q': 'Were you aware of the importance of mental health?',
+                    'C':['No, I only became aware later', 'I was aware of some', 'Yes, I was aware of all of them', 'N/A (was not aware)'],
+                    'cname':'aware_of_importance'
+                },
+                {
+                    'Q': 'How many of your coworkers respond to you when you seeked help for previous mental/physical health issues?',
+                    'C':['No, none did', 'Some did', 'Yes, they all did', "I don't know"],
+                    'cname':'previous_help'
+                },
+                {
+                    'Q': 'Is there any mental health allowance in your company/organization?',
+                    'C':['Yes', 'No', 'Not eligible for coverage / NA', "I don't know"],
+                    'cname':'mental_health_allowance'
+                },
+                {
+                    'Q': 'Are you okay with bringing up your mental health issues with your employer?',
+                    'C':['No', 'Yes', 'Maybe'],
+                    'cname':'employer_in_interview'
+                } 
         ];
         ques.innerHTML=q[0].Q
         options=document.getElementById('options')
@@ -39,7 +99,7 @@ $(function(){
             <div class="check"></div>
             </li>`
         options.innerHTML = content
-
+        req={}
         $(document.body).on('click',"label.element-animation",function (e) {
         //ripple start
             var parent, ink, d, x, y;    	
@@ -64,10 +124,12 @@ $(function(){
     
             var choice = $(this).parent().find('input:radio').val();
             console.log(q[questionNo].C[choice-1]);
+            req[q[questionNo].cname]=q[questionNo].C[choice-1]
             setTimeout(function(){
                 $('#loadbar').show();
                 questionNo++;
                 if((questionNo + 1) > q.length){
+                    console.log(req)
                     alert("Done");
                 } else {
                     $('#qid').html(questionNo + 1);
