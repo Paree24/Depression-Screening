@@ -124,13 +124,26 @@ $(function(){
     
             var choice = $(this).parent().find('input:radio').val();
             console.log(q[questionNo].C[choice-1]);
-            req[q[questionNo].cname]=q[questionNo].C[choice-1]
+            req[q[questionNo].cname]=[q[questionNo].C[choice-1]]
             setTimeout(function(){
                 $('#loadbar').show();
                 questionNo++;
                 if((questionNo + 1) > q.length){
+                    var xhr = new XMLHttpRequest();
                     console.log(req)
-                    alert("Done");
+                    xhr.open("POST",'http://0.0.0.0:55355/screen', false);
+                    xhr.setRequestHeader('Content-Type', 'application/json');
+                    xhr.setRequestHeader('Access-Control-Allow-Origin', 'http://0.0.0.0:55355/screen');
+                    xhr.setRequestHeader('Access-Control-Allow-Credentials','true');
+                    xhr.setRequestHeader('Access-Control-Allow-Methods', 'POST');
+                    xhr.setRequestHeader('Access-Control-Allow-Headers', 'Content-Type');
+                    xhr.send(JSON.stringify(req));
+                    if(xhr.responseText=='[0]')
+                        window.location.replace("results.html");
+                    if(xhr.responseText=='[1]')
+                        window.location.replace("results.html");
+                    if(xhr.responseText=='[2]')
+                        window.location.replace("results.html");
                 } else {
                     $('#qid').html(questionNo + 1);
                     $('input:radio').prop('checked', false);
