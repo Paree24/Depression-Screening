@@ -1,8 +1,11 @@
+import json
 import flask
 from flask_cors import CORS, cross_origin
 import pickle
 import numpy as np
 import pandas as pd
+from pymongo import MongoClient
+from bson import json_util 
 import sentry_sdk
 from sentry_sdk.integrations.flask import FlaskIntegration
 from sentry_sdk import capture_exception
@@ -25,6 +28,9 @@ def screen():
         print(type(req_data))
         print(req_data)
         test=pd.DataFrame(req_data)
+        record=test.to_dict()
+        record={k:v[0] for k,v in record.items()}
+        print(record)
         f=open('targetencodemodel.sav','rb')
         t=pickle.load(f)
         f.close()
@@ -37,6 +43,14 @@ def screen():
         model = pickle.load(file)
         level = model.predict(test)
         print(int(level))
+        record['predicted_level']=str(level)
+        client = MongoClient('localhost', 27017)
+        db = client.fyproj
+        collection = db.ques
+        print("collection_created")
+        collection.insert_one(record)
+        client.close()
+        print("Inserted")
         return str(level)
     except Exception as e:
         capture_exception(e)
