@@ -7,6 +7,7 @@ import numpy as np
 from pymongo import MongoClient
 from bson import json_util 
 import json
+import plotly.express as px
 
 app = dash.Dash(__name__)
 application = app.server
@@ -27,28 +28,16 @@ app.layout = html.Div([
     html.Div([
         html.Div(
             [
-                html.Img(
-                    src="https://visualpharm.com/assets/381/Admin-595b40b65ba036ed117d3b23.svg",
-                    className='two columns',
-                    style={
-                        'height': '5%',
-                        'width': '5%',
-                        'float': 'left',
-                        'position': 'relative',
-                        'margin-top': 10,
-                        'margin-right':50,
-                    },
-                ),
                 html.H2(children='Admin Dashboard',
-                        className='ten columns',style={'color':'#333333'})
+                        className='twelve columns offset-by-two.columns',style={'color':'#999999'})
             ],id='title', className="row"
-        ),]),
-    html.Div([
-        html.Div([html.H4("Questionnaire Statistics")],className='twelve columns'),
+        ),
+        html.Hr(),
+        html.Div([html.H4("Questionnaire Statistics")],className='twelve columns',style={'color':'#ffffff'}),
         html.Div([dcc.Dropdown(
                     id='dropdown',
                     options=cols,
-                    value='interferes_with_work')],className='twelve columns'),
+                    value='interferes_with_work')],className='twelve columns',style={'margin-bottom':'10px'}),
         html.Div(
             [
             html.Div([
@@ -70,11 +59,7 @@ app.layout = html.Div([
 def  update_graph(selector):
     df=data[selector].value_counts()
     print(type(df))
-    pie=go.Pie(labels=df.index,values=df)
-    figure={
-            'data': [pie],
-            'layout':go.Layout(title="Pie Chart")
-            }
+    figure=px.pie(values=df, names=df.index, color_discrete_sequence=px.colors.qualitative.Pastel)
     return figure
 
 @app.callback(dash.dependencies.Output('bar','figure'),
@@ -82,11 +67,7 @@ def  update_graph(selector):
 def  update_graph_2(selector):
     df=data[selector].value_counts()
     print(type(df))
-    plot=go.Bar(x=df.index,y=df)
-    figure={
-            'data': [plot],
-            'layout':go.Layout(title="Bar Chart")
-            }
+    figure=px.bar(x=df.index,y=df)
     return figure
 
 if __name__ == '__main__':
