@@ -47,11 +47,29 @@ def screen():
         client = MongoClient('localhost', 27017)
         db = client.fyproj
         collection = db.ques
-        print("collection_created")
+        print("connection_created")
         collection.insert_one(record)
         client.close()
         print("Inserted")
         return str(level)
+    except Exception as e:
+        capture_exception(e)
+        flask.abort(400)
+
+@app.route('/data',methods = ['GET'])
+@cross_origin()
+def get_data():
+    try:
+        client = MongoClient('localhost', 27017)
+        db = client.fyproj
+        collection = db.ques
+        print("connection_created")
+        cursor=collection.find()
+        df =  pd.DataFrame(list(cursor))
+        df.to_csv('downloaded.csv')
+        print("Saved to downloaded.csv")
+        client.close()
+        return "Saved"
     except Exception as e:
         capture_exception(e)
         flask.abort(400)
