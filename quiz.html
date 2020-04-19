@@ -3,78 +3,78 @@
 <html>
 
 <head>        
-        <link href="bootstrap/css/bootstrap.css" rel="stylesheet" id="bootstrap-css">
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/popper.js"></script>
-        <script src="bootstrap/js/bootstrap.min.js"></script>
-        <script src="assets/js/index.js"></script>
-        <script src="assets/js/script.js" type="text/javascript"></script>
-        <link href="assets/css/style.css" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet" id="bootstrap-css">
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/popper.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/index.js"></script>
+    <script src="assets/js/script.js" type="text/javascript"></script>
+    <link href="assets/css/style.css" rel="stylesheet">
 </head>
 
 <body>
-        <div class="container">
-                <div class="row"><br>
-                        <span class="image-position">
-                        </span>
-                </div>
-                
-                <div class="row"><br><br>
-                        <div class="col-sm-12 col-sm-offset-2 ">
-                                <div class="loader">
-                                        <div id="quiz">
-                                                <div class="question">
-                                                        <h3>
-                                                                <span class="label label-warning" id="qid">1</span>
-                                                                <span id="question"></span>
-                                                        </h3>
-                                                </div>
-                                                
-                                                <ul id='options'>
-                                                        
-                                                
-                                                        <li>
-                                                                <input type="radio" id="s-option" name="selector" value="2">
-                                                                <label for="s-option" class="element-animation">comment //</label>
-                                                                <div class="check"><div class="inside"></div></div>
-                                                        </li>
-                                                        
-                                                        <li>
-                                                                <input type="radio" id="t-option" name="selector" value="3">
-                                                                <label for="t-option" class="element-animation">comment [ ]</label>
-                                                                <div class="check"><div class="inside"></div></div>
-                                                        </li>
-                                                </ul>
-                                        </div>
-                                </div>
-                        
-                                <div class="text-muted">
-                                        <span id="answer"></span>
-                                </div>        
-                        </div>
-                </div>
-                
-                <div class="row">
-                        <div class="col-sm-8 col-sm-offset-2">
-                                <div id="result-of-question" class="pulse animated" style="display: none;">
-                                        <span id="totalCorrect" class="pull-right"></span>
-                                        <table class="table table-hover table-responsive" >
-                                        
-                                                <thead>
-                                                        <tr>
-                                                                <th>Question No.</th>
-                                                                <th>Our answer</th>
-                                                                <th>Your answer</th>
-                                                                <th>Result</th>
-                                                        </tr>
-                                                </thead>
-                                                
-                                                <tbody id="quizResult"></tbody>
-                                        </table>
-                                </div>
-                        </div>
-                </div>
+    <div class="container" style="width: 50%;">
+        <br><br><br><h1 style="text-align: center; color:white"> QUESTIONNAIRE </h1><br><br>
+        <div class="row"><br>
+            <span class="image-position">
+            </span>
         </div>
+        
+        <div class="row"><br><br>
+            <div class="col-sm-12 col-sm-offset-2 ">
+                <div class="loader">
+                    <div id="quiz">
+                        <div class="question">
+                            <h3 style="text-align: center; font-family: 'Lato', sans-serif;">
+                                    <span id="qid">1</span>
+                                    <span>.&nbsp;&nbsp;</span>
+                                    <span id="question"></span>
+                            </h3>
+                        </div>
+                        
+                        <ul id='options'>
+                            <li>
+                                <input type="radio" id="s-option" name="selector" value="2">
+                                <label for="s-option" class="element-animation">comment //</label>
+                                <div class="check"><div class="inside"></div></div>
+                            </li>
+                            
+                            <li>
+                                <input type="radio" id="t-option" name="selector" value="3">
+                                <label for="t-option" class="element-animation">comment [ ]</label>
+                                <div class="check"><div class="inside"></div></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            
+                <div class="text-muted">
+                        <span id="answer"></span>
+                </div>        
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+                <div id="result-of-question" class="pulse animated" style="display: none;">
+                    <span id="totalCorrect" class="pull-right"></span>
+                    <table class="table table-hover table-responsive" >
+                    
+                        <thead>
+                            <tr>
+                                <th>Question No.</th>
+                                <th>Our answer</th>
+                                <th>Your answer</th>
+                                <th>Result</th>
+                            </tr>
+                        </thead>
+                        
+                        <tbody id="quizResult"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

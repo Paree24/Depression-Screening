@@ -1,5 +1,3 @@
-
-/*--------loader script-----------*/
 $(function(){
         var loading = $('#loadbar').hide();
         $(document)
