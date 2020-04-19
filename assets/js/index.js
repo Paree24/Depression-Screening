@@ -30,7 +30,7 @@ function autoType(elementClass, typingSpeed){
         },i*typingSpeed*0.5);
       })(i+1,text[i]);
     }
-  },1500);
+  },0);
 }
 
 $(document).ready(function(){

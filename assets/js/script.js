@@ -137,11 +137,13 @@ $(function(){
                     xhr.setRequestHeader('Access-Control-Allow-Headers', 'Content-Type');
                     xhr.send(JSON.stringify(req));
                     if(xhr.responseText=='[0]')
-                        window.location.replace("results.html");
-                    if(xhr.responseText=='[1]')
-                        window.location.replace("results.html");
-                    if(xhr.responseText=='[2]')
-                        window.location.replace("results.html");
+                        window.location.replace("r0.html");
+                    else if(xhr.responseText=='[1]')
+                        window.location.replace("r1.html");
+                    else if(xhr.responseText=='[2]')
+                        window.location.replace("r2.html");
+                    else
+                        alert ("Error, please try again.")
                 } else {
                     $('#qid').html(questionNo + 1);
                     $('input:radio').prop('checked', false);
