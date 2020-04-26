@@ -17,6 +17,10 @@ a:hover {
 .btn-light {
     border-width: 0px;
     border-radius: 0px;
+    height: 1.75em;
+    padding-top: 1.5px;
+    -webkit-box-shadow: 0 0 2rem rgba(0,0,0,.5);
+          box-shadow: -0rem 0rem 0.4rem rgba(0,0,0,.5);
 }
 .btn-light:hover {
     color: white;
@@ -35,7 +39,7 @@ a:hover {
 }
 
 p {
-    text-align: left;
+    text-align: justify;
 }
 
 h1 {
@@ -64,7 +68,7 @@ h1 {
 
 .text-white {
     font-family: 'Stint Ultra Expanded', cursive;
-    font-size: 17px;
+    font-size: 25px;
     font-weight: bolder;
     text-shadow: none;
 }
