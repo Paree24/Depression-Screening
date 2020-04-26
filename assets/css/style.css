@@ -14,9 +14,7 @@ body, html{
 .center-block{
         width: 100%;
 }
-h2 {
-        color: #AAAAAA;
-        font-weight: normal;
+h2 {      font-weight: normal;
 }
 .bg-for-submit-name
 {

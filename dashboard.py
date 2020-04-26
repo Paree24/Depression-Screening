@@ -28,12 +28,12 @@ app.layout = html.Div([
     html.Div([
         html.Div(
             [
-                html.H2(children='Admin Dashboard',
+                html.H1(children='Admin Dashboard',
                         className='twelve columns offset-by-two.columns',style={'color':'#999999'})
             ],id='title', className="row"
         ),
         html.Hr(),
-        html.Div([html.H4("Questionnaire Statistics")],className='twelve columns',style={'color':'#ffffff'}),
+        html.Div([html.H4("Questionnaire Statistics")],className='twelve columns',style={'color':'#999999'}),
         html.Div([dcc.Dropdown(
                     id='dropdown',
                     options=cols,
@@ -52,7 +52,7 @@ app.layout = html.Div([
             ], className="row"
         ),
     ], className='ten columns offset-by-one')
-])
+],style={'background-color':'#2c2c2e'})
 
 @app.callback(dash.dependencies.Output('v_line','figure'),
               [dash.dependencies.Input('dropdown','value')])
