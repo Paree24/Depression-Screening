@@ -10,19 +10,32 @@ a:hover {
 .btn-secondary:focus {
   color: #333;
   text-shadow: none; /* Prevent inheritance from `body` */
-  background-color: #fff;
+  background-color: #000000;
   border: .05rem solid #fff;
+}
+
+.btn-light {
+    border-width: 0px;
+    border-radius: 0px;
+}
+.btn-light:hover {
+    color: white;
+    background-color: black;
 }
 
 .container {
     display: flex;
     flex-wrap: wrap;
+    padding: 0em;
     justify-content: center;
     align-items: center;
+    -webkit-box-shadow: 0 0 9rem rgba(0,0,0,.5);
+          box-shadow: -0rem 0rem 4rem rgba(0,0,0,1);
+    background-color: #000000d3;
 }
 
 p {
-    text-align: justify;
+    text-align: left;
 }
 
 h1 {
@@ -35,17 +48,23 @@ h1 {
 }
 
 .navbar {
+    width: 100%;
     background-color: rgb(40, 167, 69);
     .background-color: white;
     height: 55px;
-    box-shadow: ivory;
     -webkit-box-shadow: inset 0 0 9rem rgba(0,0,0,.5);
           box-shadow: inset 0 0 2rem rgba(0,0,0,.5);
 }
 
+.inner-nav {
+    background-color: rgba(0,0,0,0);
+    -webkit-box-shadow: inset 0 0 0rem rgba(0,0,0,.5);
+          box-shadow: inset 0 0 0rem rgba(0,0,0,.5);
+}
+
 .text-white {
     font-family: 'Stint Ultra Expanded', cursive;
-    font-size: 27px;
+    font-size: 17px;
     font-weight: bolder;
     text-shadow: none;
 }
@@ -56,6 +75,9 @@ body {
   height: 100%;
   width: 100%;
   background-color: #333;
+  background-image: url("assets/img/bg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 body {
   color: #fff;
