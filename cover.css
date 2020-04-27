@@ -1,7 +1,26 @@
+@font-face {
+    font-family: 'Stint Ultra Expanded';
+    src: url('assets/css/stintultraexpanded-regular.woff2') format('woff2'),
+         url('assets/css/stintultraexpanded-regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Bitter';
+    src: url('assets/css/bitter-regular.woff2') format('woff2'),
+         url('assets/css/bitter-regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 a,
 a:focus,
 a:hover {
-  color: #fff;
+  color: skyblue;
+  font-family: 'Stint Ultra Expanded', cursive;
+  font-weight: bold;
 }
 
 /* Custom default button */
@@ -14,13 +33,21 @@ a:hover {
   border: .05rem solid #fff;
 }
 
+.team {
+    box-shadow: 0 0 1.5rem rgb(0,0,0);
+    padding: 20px;
+    margin: 0px;
+    width: 640px;
+    background-color: rgba(27, 4, 32, 0.39);
+}
+
 .btn-light {
     border-width: 0px;
     border-radius: 0px;
     height: 1.75em;
     padding-top: 1.5px;
     -webkit-box-shadow: 0 0 2rem rgba(0,0,0,.5);
-          box-shadow: -0rem 0rem 0.4rem rgba(0,0,0,.5);
+          box-shadow: 0 0 2rem rgba(0,0,0,.5);
 }
 .btn-light:hover {
     color: white;
@@ -47,8 +74,10 @@ h1 {
     font-family: 'Bitter', serif;
 }
 
-#demo {
+.media {
     box-shadow: 0 0 1.5rem rgb(0, 0, 0);
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 
 .navbar {
