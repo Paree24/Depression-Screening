@@ -51,6 +51,15 @@ app.layout = html.Div([
             )
             ], className="row"
         ),
+        html.Br(),
+        html.Div(
+            [
+            html.Div(
+                [ dcc.Graph(id='colorbar')
+                ], className="twelve columns"
+            )
+            ], className="row"
+        ),
     ], className='ten columns offset-by-one')
 ],style={'background-color':'#2c2c2e'})
 
@@ -70,5 +79,18 @@ def  update_graph_2(selector):
     figure=px.bar(x=df.index,y=df)
     return figure
 
+@app.callback(dash.dependencies.Output('colorbar','figure'),
+              [dash.dependencies.Input('dropdown','value')])
+def  update_graph_2(selector):
+    dfl0=data[data['predicted_level']=='[0]'][selector].value_counts()
+    dfl1=data[data['predicted_level']=='[1]'][selector].value_counts()
+    dfl2=data[data['predicted_level']=='[2]'][selector].value_counts()
+    figure = go.Figure(data=[
+        go.Bar(name='Level 0',x=dfl0.index,y=dfl0),
+        go.Bar(name='Level 1',x=dfl1.index,y=dfl1),
+        go.Bar(name='Level 2',x=dfl2.index,y=dfl2),
+    ])
+    return figure
+
 if __name__ == '__main__':
-    application.run(debug=False)
+    application.run(debug=True)
