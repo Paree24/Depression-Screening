@@ -68,7 +68,8 @@ app.layout = html.Div([
 def  update_graph(selector):
     df=data[selector].value_counts()
     print(type(df))
-    figure=px.pie(values=df, names=df.index, color_discrete_sequence=px.colors.qualitative.Pastel)
+    figure=px.pie(values=df, names=df.index, color_discrete_sequence=px.colors.qualitative.Pastel, 
+    title="Percentage Distribution of Answers")
     return figure
 
 @app.callback(dash.dependencies.Output('bar','figure'),
@@ -76,7 +77,8 @@ def  update_graph(selector):
 def  update_graph_2(selector):
     df=data[selector].value_counts()
     print(type(df))
-    figure=px.bar(x=df.index,y=df)
+    figure=px.bar(x=df.index,y=df, color=df.index, title="Count Plot of Answers",
+    color_discrete_sequence=px.colors.qualitative.Plotly)
     return figure
 
 @app.callback(dash.dependencies.Output('colorbar','figure'),
@@ -89,7 +91,10 @@ def  update_graph_2(selector):
         go.Bar(name='Level 0',x=dfl0.index,y=dfl0),
         go.Bar(name='Level 1',x=dfl1.index,y=dfl1),
         go.Bar(name='Level 2',x=dfl2.index,y=dfl2),
-    ])
+    ], 
+    layout=go.Layout(
+        title=go.layout.Title(text="Predicted Levels by Answers")
+    ))
     return figure
 
 if __name__ == '__main__':
