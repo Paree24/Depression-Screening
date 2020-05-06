@@ -1,0 +1,47 @@
+@font-face {
+    font-family: 'Stint Ultra Expanded';
+    src: url('assets/css/stintultraexpanded-regular.woff2') format('woff2'),
+    url('assets/css/stintultraexpanded-regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    
+}
+@font-face {
+    font-family: 'Bitter';
+    src: url('assets/css/bitter-regular.woff2') format('woff2'),
+    url('assets/css/bitter-regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*===========================================================================*/
+
+/* Global stuff (of course, "unless specified otherwise") */
+body {  color: aqua;
+    
+
+    /* Background image stuff */
+    height: 100%;
+    width: 100%;
+    background-color: #333;
+    background-image: url("assets/img/bg.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    /* All text matter / Make text great again */
+    text-shadow: 0 .05rem .1rem rgba(0,0,0,.5);
+}
+
+.container-fluid {   border: 5px solid red;
+}
+
+.row {   border: 5px solid yellow;
+    
+    display: flexbox;
+    justify-content: center;
+}
+
+.col {   border: 5px solid lawngreen;
+    
+    
+}
