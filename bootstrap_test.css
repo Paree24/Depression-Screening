@@ -32,16 +32,11 @@ body {  color: aqua;
     text-shadow: 0 .05rem .1rem rgba(0,0,0,.5);
 }
 
-.container-fluid {   border: 5px solid red;
+.container {   border: 5px solid red;
 }
 
-.row {   border: 5px solid yellow;
-    
-    display: flexbox;
-    justify-content: center;
+.row {   border: 5px solid yellow;    
 }
 
-.col {   border: 5px solid lawngreen;
-    
-    
+.col {   border: 5px solid lawngreen;   
 }

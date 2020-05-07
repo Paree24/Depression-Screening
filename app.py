@@ -74,4 +74,4 @@ def get_data():
         capture_exception(e)
         flask.abort(400)
 
-app.run(host = "0.0.0.0", port = 55355)
+app.run(host = "127.0.0.1", port = 55355)
