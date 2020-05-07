@@ -129,9 +129,9 @@ $(function(){
                 if((questionNo + 1) > q.length){
                     var xhr = new XMLHttpRequest();
                     console.log(req)
-                    xhr.open("POST",'http://localhost:55355/screen', false);
+                    xhr.open("POST",'http://127.0.0.1:55355/screen', false);
                     xhr.setRequestHeader('Content-Type', 'application/json');
-                    xhr.setRequestHeader('Access-Control-Allow-Origin', 'http://localhost:55355/screen');
+                    xhr.setRequestHeader('Access-Control-Allow-Origin', 'http://127.0.0.1:55355/screen');
                     xhr.setRequestHeader('Access-Control-Allow-Credentials','true');
                     xhr.setRequestHeader('Access-Control-Allow-Methods', 'POST');
                     xhr.setRequestHeader('Access-Control-Allow-Headers', 'Content-Type');
