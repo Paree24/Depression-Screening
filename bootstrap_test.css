@@ -47,10 +47,22 @@ body {  color: white;
 .navrow { 
     background-color: rgb(32, 60, 63);
     font-family: 'Stint Ultra Expanded', cursive;
-    font-size: 16px;
     font-weight: bold;
     min-height: 37px;
 }
+
+@media screen and (min-width: 577px) {
+    .navrow {
+      font-size: 16px;
+    }
+  }
+  
+  /* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+  @media screen and (max-width: 576px) {
+    .navrow {
+      font-size: 15.4px;
+    }
+  }
 
 .d1 {
     border-left: 1px solid rgb(153, 153, 153);
@@ -93,4 +105,5 @@ img {
 .card-deck > .card {
     margin-top: 0.25cm;
     margin-bottom: 0.55cm;
-}
+    background-color: rgb(32, 60, 63);
+} 
