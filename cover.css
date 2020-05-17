@@ -1,263 +1,129 @@
 @font-face {
     font-family: 'Stint Ultra Expanded';
     src: url('assets/css/stintultraexpanded-regular.woff2') format('woff2'),
-         url('assets/css/stintultraexpanded-regular.woff') format('woff');
+    url('assets/css/stintultraexpanded-regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
+    
 }
-
 @font-face {
     font-family: 'Bitter';
     src: url('assets/css/bitter-regular.woff2') format('woff2'),
-         url('assets/css/bitter-regular.woff') format('woff');
+    url('assets/css/bitter-regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
-a,
-a:focus,
-a:hover {
-  color: skyblue;
-  font-family: 'Stint Ultra Expanded', cursive;
-  font-weight: bold;
-}
+/*===========================================================================*/
 
-/* Custom default button */
-.btn-secondary,
-.btn-secondary:hover,
-.btn-secondary:focus {
-  color: #333;
-  text-shadow: none; /* Prevent inheritance from `body` */
-  background-color: #000000;
-  border: .05rem solid #fff;
-}
+/* Global stuff (of course, "unless specified otherwise") */
+body {  color: white;
 
-.team {
-    box-shadow: 0 0 1.5rem rgb(0,0,0);
-    padding: 20px;
-    margin: 0px;
-    width: 640px;
-    background-color: rgba(27, 4, 32, 0.39);
-}
+    /* Background image stuff */
+    height: 100%;
+    width: 100%;
+    background-color: #333;
+    background-image: url("assets/img/bg.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 
-.btn-light {
-    border-width: 0px;
-    border-radius: 0px;
-    height: 1.75em;
-    padding-top: 1.5px;
-    -webkit-box-shadow: 0 0 2rem rgba(0,0,0,.5);
-          box-shadow: 0 0 2rem rgba(0,0,0,.5);
-}
-.btn-light:hover {
-    color: white;
-    background-color: black;
-}
-
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0em;
-    justify-content: center;
-    align-items: center;
-    -webkit-box-shadow: 0 0 9rem rgba(0,0,0,.5);
-          box-shadow: -0rem 0rem 4rem rgba(0,0,0,1);
-    background-color: #000000d3;
-}
-
-p {
+    /* All text matter / Make text great again */
     text-align: justify;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    margin-top: 30px;
-    margin-bottom: 15px;
-    font-family: 'Bitter', serif;
+.container {   .border: 5px solid red;  
+}
+
+.row {   .border: 5px solid yellow;    
+}
+
+.col {   .border: 5px solid lawngreen;   
+}
+
+.bgcol {
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+.navrow { 
+    background-color: rgb(32, 60, 63);
+    font-family: 'Stint Ultra Expanded', cursive;
+    font-weight: bold;
+    min-height: 37px;
+}
+
+@media screen and (min-width: 577px) {
+    .navrow {
+      font-size: 16px;
+    }
+
+    .d1 {
+        border-left: 1px solid rgb(153, 153, 153);
+        align-items: center;
+        padding-left: 8px;
+    }
+
+    h1 {
+        margin-top: 1cm;
+        margin-bottom: 0.45cm;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 2.25em;
+    }
+}
+  
+@media screen and (max-width: 576px) {
+    .navrow {
+      font-size: 14.3999991px;
+      padding-top: 0.275cm;
+      padding-bottom: 0.225cm;
+    }
+
+    .d1 {
+        border-left: 0px solid rgb(153, 153, 153);
+        align-items: left;
+        padding-left: 0px;
+    }
+
+    h1 {
+        margin-top: 1cm;
+        margin-bottom: 0.45cm;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 2.25em;
+        text-align: center;
+    }
+}
+
+.btn {
+    height: 37px;
+    background-color: rgba(0,0,0,.1);
+    color: white;
+    font-size: 18px;
+}
+
+p {
+    margin-bottom: 0.45cm;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+a {
+    color: tan;
 }
 
 .media {
     box-shadow: 0 0 1.5rem rgb(0, 0, 0);
-    margin-top: 25px;
-    margin-bottom: 25px;
-}
-
-.navbar {
     width: 100%;
-    background-color: rgb(40, 167, 69);
-    .background-color: white;
-    height: 55px;
-    -webkit-box-shadow: inset 0 0 9rem rgba(0,0,0,.5);
-          box-shadow: inset 0 0 2rem rgba(0,0,0,.5);
+    margin-top: 0.75cm;
+    margin-bottom: 0.75cm;
+    border: 1px solid #2c2c2c;
+    border-radius: 0px;
 }
 
-.inner-nav {
-    background-color: rgba(0,0,0,0);
-    -webkit-box-shadow: inset 0 0 0rem rgba(0,0,0,.5);
-          box-shadow: inset 0 0 0rem rgba(0,0,0,.5);
+img {
+    max-width: 100%;
+    max-height: 100%;
 }
 
-.text-white {
-    font-family: 'Stint Ultra Expanded', cursive;
-    font-size: 25px;
-    font-weight: bolder;
-    text-shadow: none;
-}
-
-
-html,
-body {
-  height: 100%;
-  width: 100%;
-  background-color: #333;
-  background-image: url("assets/img/bg.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
-body {
-  color: #fff;
-  text-shadow: 0 .05rem .1rem rgba(0,0,0,.5);
-}
-
-/* Extra markup and styles for table-esque vertical and horizontal centering */
-.site-wrapper {
-  display: table;
-  width: 100%;
-  height: 100%; /* For at least Firefox */
-  min-height: 100%;
-  -webkit-box-shadow: inset 0 0 5rem rgba(0,0,0,.5);
-          box-shadow: inset 0 0 5rem rgba(0,0,0,.5);
-    vertical-align: middle;
-}
-.site-wrapper-inner {
-  display: table-cell;
-  vertical-align: top;
-}
-.cover-container {
-  margin-right: auto;
-  margin-left: auto;
-}
-
-/* Padding for spacing */
-.inner {
-  padding: 2rem;
-}
-
-
-/*
- * Header
- */
-
-.masthead {
-  margin-bottom: 2rem;
-}
-
-.masthead-brand {
-  margin-bottom: 0;
-}
-
-.nav-masthead .nav-link {
-  padding: .25rem 0;
-  font-weight: bold;
-  color: rgba(255,255,255,.5);
-  background-color: transparent;
-  border-bottom: .25rem solid transparent;
-}
-
-.nav-masthead .nav-link:hover,
-.nav-masthead .nav-link:focus {
-  border-bottom-color: rgba(255,255,255,.25);
-}
-
-.nav-masthead .nav-link + .nav-link {
-  margin-left: 1rem;
-}
-
-.nav-masthead .active {
-  color: #fff;
-  border-bottom-color: #fff;
-}
-
-@media (min-width: 48em) {
-  .masthead-brand {
-    float: left;
-  }
-  .nav-masthead {
-    float: right;
-  }
-}
-
-
-/*
- * Cover
- */
-
-.cover {
-  padding: 0 1.5rem;
-}
-.cover .btn-lg {
-  padding: .75rem 1.25rem;
-  font-weight: bold;
-}
-
-
-/*
- * Footer
- */
-
-.mastfoot {
-  color: rgba(255,255,255,.5);
-}
-
-
-/*
- * Affix and center
- */
-
-@media (min-width: 40em) {
-  /* Pull out the header and footer */
-  .masthead {
-    position: fixed;
-    top: 0;
-  }
-  .mastfoot {
-    position: fixed;
-    bottom: 0;
-  }
-  /* Start the vertical centering */
-  .site-wrapper-inner {
-    vertical-align: middle;
-  }
-  /* Handle the widths */
-  .masthead,
-  .mastfoot,
-  .cover-container {
-    width: 100%; /* Must be percentage or pixels for horizontal alignment */
-  }
-}
-
-@media (min-width: 62em) {
-  .masthead,
-  .mastfoot,
-  .cover-container {
-    width: 42rem;
-  }
-}
-
-.ml7 {
-  position: relative;
-  font-weight: 900;
-  font-size: 3.7em;
-}
-.ml7 .text-wrapper {
-  position: relative;
-  display: inline-block;
-  padding-top: 0.2em;
-  padding-right: 0.05em;
-  padding-bottom: 0.1em;
-  overflow: hidden;
-}
-.ml7 .letter {
-  transform-origin: 0 100%;
-  display: inline-block;
-  line-height: 1em;
-}
+.card-deck > .card {
+    margin-top: 0.25cm;
+    margin-bottom: 0.55cm;
+    background-color: rgb(32, 60, 63);
+} 
