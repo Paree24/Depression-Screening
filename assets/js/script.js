@@ -136,6 +136,7 @@ $(function(){
         //ripple end
     
             var choice = $(this).parent().find('input:radio').val();
+            $(this).parent().find('input:radio').prop('checked', true);
             console.log(q[questionNo].C[choice-1]);
             req[q[questionNo].cname]=[q[questionNo].C[choice-1]]
             setTimeout(function(){
