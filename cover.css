@@ -51,6 +51,9 @@ body {  color: white;
     min-height: 37px;
 }
 
+.jumbotron {
+    background-color: #2c2c2c;
+}
 @media screen and (min-width: 577px) {
     .navrow {
       font-size: 16px;
