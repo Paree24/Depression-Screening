@@ -73,5 +73,7 @@ def get_data():
     except Exception as e:
         capture_exception(e)
         flask.abort(400)
-
+@app.route('/')
+def home():
+    return "Flask Server is running"
 app.run(host = "127.0.0.1", port = 55355)
