@@ -35,7 +35,7 @@ def getdata():
 		#return data to a variable
 		return data
 	except:
-		#if no filename is given in the arguments, use 2018.csv
+		#if no filename is given in the arguments, use cleaned.csv
 		data=pd.read_csv('cleaned.csv')
 		#return data to a variable
 		return data

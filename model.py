@@ -40,7 +40,7 @@ def getdata():
         #return data to a variable
         return data
     except:
-        #if no filename is given in the arguments, use 2018.csv
+        #if no filename is given in the arguments, use encoded.csv
         data=pd.read_csv('encoded.csv')
         #If the data is exported from pandas
         if data.columns[0]=='Unnamed: 0':

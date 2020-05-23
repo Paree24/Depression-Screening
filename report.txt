@@ -3691,6 +3691,16 @@ weighted avg       0.89      0.90      0.89       105
 
 
 
+Classification Report: 
+              precision    recall  f1-score   support
+
+           0       0.90      0.90      0.90        21
+           1       0.86      1.00      0.92         6
+           2       0.99      0.97      0.98        78
+
+    accuracy                           0.96       105
+   macro avg       0.92      0.96      0.94       105
+weighted avg       0.96      0.96      0.96       105
 
 
 Previous Model is better
@@ -3698,14 +3708,15 @@ Previous Model is better
 Report:
 Model : Accuracy
 Random Forest  :  96.19047619047619
-XGBoost  :  89.52380952380953
 Gradient Boost  :  89.52380952380953
 SVM  :  88.57142857142857
 KNN  :  87.61904761904762
-Bagging  :  87.61904761904762
 Decision Tree  :  86.66666666666667
-AdaBoost  :  86.66666666666667
-Naive Bayes  :  70.47619047619048
+Bagging  :  85.71428571428571
+XGBoost  :  84.76190476190476
+AdaBoost  :  82.85714285714286
+Naive Bayes  :  79.04761904761905
+
 Selected Model:  Random Forest
 Model Accuracy: 0.9619047619047619
 
